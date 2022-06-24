@@ -1,0 +1,17 @@
+.container{
+    position: absolute;
+    padding-top: 155px;
+    top:0px;
+    bottom: 0px;
+    left:0px;
+    right:0px;
+    background: cornflowerblue;
+    font-family: 'Copperplate Gothic', sans-serif;
+    
+}
+.table{
+    position: absolute;
+    left :520px;
+    top :145px;
+    
+}

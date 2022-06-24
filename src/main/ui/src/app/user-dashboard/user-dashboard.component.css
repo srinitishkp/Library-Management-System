@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    overflow-y: auto;
+}
+.container{
+  position: absolute;
+  top:0px;
+  bottom: 0px;
+  left:0px;
+  right:0px;
+  padding: 100px;
+  background: #66dcb9;
+  font-family: 'Copperplate Gothic', sans-serif;
+}
+.content{
+    color: white;
+    left: 10px;
+}
+.content #available{
+    position: absolute;
+    left : 15px;
+}
+.content #bookTable{
+    position: absolute;
+    left: 15px;
+    top : 125px;
+    width: 650px;
+    height: 200px;
+}
+.content #borrowForm{
+    position: absolute;
+    right : 75px;
+    top : 70px;
+    
+}
+.content #borrowed{
+    position: absolute;
+    bottom : 240px;
+    left : 17px;
+
+}
+.content #borrowTable{
+    position: absolute;
+    bottom: 37px;
+    left: 17px;
+    width: 650px;
+    height: 200px;
+}

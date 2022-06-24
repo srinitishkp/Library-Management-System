@@ -1,0 +1,27 @@
+.header{
+    padding-top: 15px;
+    padding: 20px 20px 0;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+    height: 80px;
+    display: flex;
+    padding: 0 var(--gap);
+    margin: 0 0 var(--gap) 0;
+    --fleck-seed: 35458;
+    --fleck-count: 500;
+    --fleck-size-base: 1px;
+    --fleck-color-1: #262626;
+    background-color: rgb(255, 255, 255);
+    font-family: 'Centaur','Sans-serif';
+    align-content: center;
+    box-shadow: 0 2px 25px rgba(0, 0, 0, 0.2);
+}
+.header .title{
+    position: absolute;
+    top: 2px;
+    left:85px;   
+}
+.header .logo{
+    padding: 5px;
+}

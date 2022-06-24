@@ -1,0 +1,98 @@
+<librarian-header></librarian-header>
+<div class="register" >   
+
+
+  <div class="register-form">
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" >
+        <h1>Add Member</h1>
+        <div class="content">
+          <div class="input-field">
+            <input type="text" placeholder="Name" class="form-control" formControlName="AccountName" >
+          </div>
+          <div *ngIf="registerForm.controls.AccountName.invalid && (registerForm.controls.AccountName.dirty || registerForm.controls.AccountName.touched)" class="alert alert-danger">
+            <div *ngIf="registerForm.controls.AccountName.errors?.['required']">
+                Name is required.
+            </div>
+            <div *ngIf="registerForm.controls.AccountName.errors?.['minlength']">
+                Name must be at least 4 characters long.
+            </div>
+          </div> 
+          <div class="input-field">
+            <input type="email" placeholder="Email" class="form-control" formControlName="Email" >
+          </div>
+          <div *ngIf="registerForm.controls.Email.invalid && (registerForm.controls.Email.dirty || registerForm.controls.Email.touched)" class="alert alert-danger">
+            <div *ngIf="registerForm.controls.Email.errors?.['required']">
+                Email is required.
+            </div>
+            <div *ngIf="registerForm.controls.Email.errors?.['email']">
+                Enter a valid email.
+            </div>
+          </div> 
+          <div class="input-field">
+            <input type="text-field" class="form-control"  placeholder="Address" formControlName="Address" >
+          </div>
+          <div *ngIf="registerForm.controls.Address.invalid && (registerForm.controls.Address.dirty || registerForm.controls.Address.touched)" class="alert alert-danger">
+            <div *ngIf="registerForm.controls.Address.errors?.['required']">
+              Address is required.
+            </div>
+            <div *ngIf="registerForm.controls.Address.errors?.['maxlength']">
+                Address can only have 250 characters.
+            </div>
+          </div>          
+          <div class="input-field">
+            <input type="number" placeholder="Phone"  class="form-control" formControlName="Phone" >
+          </div>
+          <div *ngIf="registerForm.controls.Phone.invalid && (registerForm.controls.Phone.dirty || registerForm.controls.Phone.touched)" class="alert alert-danger">
+            <div *ngIf="registerForm.controls.Phone.errors?.['required']">
+              Phone number is required.
+            </div>
+            <div *ngIf="registerForm.controls.Phone.errors?.['minlength']">
+              Phone number should have 10 digits.
+            </div>
+            <div *ngIf="registerForm.controls.Phone.errors?.['maxlength']">
+              Phone number should have 10 digits.
+            </div>
+          </div>  
+          <div class="input-field">
+            <input type="text" placeholder="Username"  class="form-control" formControlName="UserName" >
+          </div>
+          <div *ngIf="registerForm.controls.UserName.invalid && (registerForm.controls.UserName.dirty || registerForm.controls.UserName.touched)" class="alert alert-danger">
+            <div *ngIf="registerForm.controls.UserName.errors?.['required']">
+              UserName is required.
+            </div>
+            <div *ngIf="registerForm.controls.Address.errors?.['maxlength']">
+              UserName can only have 15 characters.
+            </div>
+          </div>  
+          <div class="input-field">
+            <input type="password" placeholder="Password"  class="form-control" formControlName="Password" >
+          </div>
+          <div *ngIf="registerForm.controls.Password.invalid && (registerForm.controls.Password.dirty || registerForm.controls.Password.touched)" class="alert alert-danger">
+            <div *ngIf="registerForm.controls.Password.errors?.['required']">
+                Password is required.
+            </div>
+            <div *ngIf="registerForm.controls.Password.errors?.['minlength']">
+                Password should have 6 characters.
+            </div>
+          </div>  
+          <div class="input-field">
+            <input type="number" min="2023" max="2099" step="1" value="2016"  class="form-control" placeholder="Validity" formControlName="Validity" >
+          </div>
+          <div *ngIf="registerForm.controls.Validity.invalid && (registerForm.controls.Validity.dirty || registerForm.controls.Validity.touched)" class="alert alert-danger">
+            <div *ngIf="registerForm.controls.Validity.errors?.['required']">
+                Validity is required.
+            </div>
+            <div *ngIf="registerForm.controls.Validity.errors?.['maxlength']">
+                Validity can only have 4 characters.
+            </div>
+          </div>  
+    
+        </div>
+        <div class="action">
+          <button type="submit" [disabled]="!registerForm.valid">Add Member</button>
+        </div>
+      </form>
+    </div>
+    <script  src="./script.js"></script><!DOCTYPE html>
+  
+  </div> 

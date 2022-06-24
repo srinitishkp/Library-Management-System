@@ -1,0 +1,5 @@
+<div  *ngIf=showLibrarianHeader><librarian-header></librarian-header></div>
+<div *ngIf=showUserHeader><user-header></user-header></div>
+<div class="container">
+    <book-table [books]=bookData></book-table>
+</div>

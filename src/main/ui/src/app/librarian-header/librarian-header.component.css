@@ -1,0 +1,33 @@
+.options{
+    position: absolute;
+    top : 30px;
+    right: 20px;
+    padding: 5px 20px 0;
+    align-items: right;
+    z-index: 2;
+    font-family: 'Centaur','Sans-serif';
+    word-spacing: 0px;
+    font-weight: bold;
+}
+.options ul{
+    list-style: none;
+    word-spacing: 2px;
+    margin:0;
+    padding:0;
+}
+.options li{
+    display: inline;
+    word-spacing: 2px;
+}
+
+.options a:hover{
+    text-decoration: underline;
+    border-bottom: 10px black;
+}
+.options a{
+
+    text-decoration: none;
+    color: black;
+    display: inline;
+    
+}

@@ -1,0 +1,20 @@
+<div  *ngIf=showLibrarianHeader><librarian-header></librarian-header></div>
+<div *ngIf=showUserHeader><user-header></user-header></div>
+<div class="container">
+    <div class="search" >
+        <form [formGroup]="searchBar" #ngForm="ngForm" (ngSubmit)="onSubmit()" >
+            <div class="input-field">
+                <input type="text" placeholder="SEARCH BASED ON GENRE" class="form-control" formControlName="Genre" >
+            </div>
+            <div class="action">
+                <button type="submit" formControlName="submit" [disabled]="!searchBar.invalid">Search</button>
+            </div>
+            <div *ngIf="searchBar.invalid && ngForm.submitted" class="alert alert-danger">
+                <div *ngIf="searchBar.controls.Genre.errors?.['required']">
+                    Please enter a Genre.
+                </div>
+            </div>
+        </form>
+    </div>
+    <div id="table"><book-table [books]=bookData></book-table></div>
+</div>

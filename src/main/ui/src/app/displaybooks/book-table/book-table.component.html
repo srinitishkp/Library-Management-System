@@ -1,0 +1,25 @@
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Genre</th>
+                <th>Availability</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let book of books">
+                <td>{{book.bookId}}</td>
+                <td>{{book.BookName}}</td>
+                <td>{{book.AuthorName}}</td>
+                <td>{{book.Genre}}</td>
+                <td>{{book.Availability}}</td>
+                <td *ngIf=user><button  (click)="this.borrow(book.bookId)">BORROW</button></td>
+                <td *ngIf=librarian><button (click)="this.remove(book.bookId)">REMOVE</button></td>
+            </tr>
+        </tbody>
+    </table>    
+</div>

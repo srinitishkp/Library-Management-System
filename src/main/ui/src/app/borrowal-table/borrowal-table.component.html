@@ -1,0 +1,26 @@
+<div  *ngIf=librarian><librarian-header></librarian-header></div>
+<div *ngIf=user><user-header></user-header></div>
+<div class="container">
+    <div id="table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Book Id</th>
+                    <th>Book Name</th>
+                    <th *ngIf=librarian>Borrower UserName</th>
+                    <th>Return Date</th>
+                    <td></td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let borrowal of borrowals">
+                    <td>{{borrowal.bookId}}</td>
+                    <td>{{borrowal.BookName}}</td>
+                    <td *ngIf=librarian>{{borrowal.uname}}</td>
+                    <td>{{ borrowal.returnDate}}</td>
+                    <td *ngIf=!librarian><button (click)="this.onReturn(borrowal.bookId.toString())">RETURN</button></td>
+                </tr>
+            </tbody>
+        </table>    
+    </div>
+</div>

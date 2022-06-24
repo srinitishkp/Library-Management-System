@@ -1,0 +1,29 @@
+<librarian-header></librarian-header>
+<div class="container">
+    <div id="table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Address</th>
+                    <th>Validity</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let account of accounts">
+                    <td>{{account.uname}}</td>
+                    <td>{{account.Name}}</td>
+                    <td >{{account.Phn}}</td>
+                    <td >{{account.email}}</td>
+                    <td >{{account.address}}</td>
+                    <td >{{account.Validity}}</td>
+                    <td><button (click)="this.remove(account.uname)">REMOVE</button></td>
+                </tr>
+            </tbody>
+        </table>    
+    </div>
+</div>

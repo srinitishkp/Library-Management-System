@@ -1,0 +1,36 @@
+<div class="options"><a routerLink="/">HOME</a></div>
+<div class="login">   
+<div class="login-form" >
+    <form [formGroup]="loginForm" #ngForm="ngForm" (ngSubmit)="onSubmit()" >
+      <h1>Login</h1>
+      <div class="content">
+        <div class="input-field">
+          <input type="text" placeholder="Username" class="form-control" formControlName="uname" >
+        </div>
+        <div *ngIf="loginForm.controls.uname.invalid && (loginForm.controls.uname.dirty || loginForm.controls.uname.touched)" class="alert alert-danger">
+          <div *ngIf="loginForm.controls.uname.errors?.['required']">
+              Username is required.
+          </div>
+          <div *ngIf="loginForm.controls.uname.errors?.['maxlength']">
+              Username must be at most 15  characters.
+          </div>
+        </div>
+        <div class="input-field">
+          <input type="password" placeholder="Password" class="form-control" formControlName="passw" >
+        </div>
+        <div *ngIf="loginForm.controls.passw.invalid && (loginForm.controls.passw.dirty || loginForm.controls.passw.touched)" class="alert alert-danger">
+          <div *ngIf="loginForm.controls.passw.errors?.['required']">
+              Password is required.
+          </div>
+        </div>
+      </div>
+      <div class="action">
+        <button type="submit" formControlName="submit" [disabled]="!loginForm.invalid">Login</button>
+      </div>
+    </form>
+    
+  </div>
+  <script  src="./script.js"></script><!DOCTYPE html>
+
+</div> 
+<router-outlet></router-outlet>

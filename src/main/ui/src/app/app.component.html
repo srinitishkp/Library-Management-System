@@ -1,0 +1,10 @@
+<div class="container">
+      <div class="header"><header></header></div>
+      <div class="options" *ngIf="showWelcome">&nbsp;&nbsp;&nbsp;<a routerLink="/login">LOGIN</a></div>
+      <div class="welcome" *ngIf="show"></div>
+      <div class="bg-text" *ngIf="show">
+            <h1>Welcome to Library Management System</h1>
+            <p>Library tasks simplified</p>
+      </div>
+</div>
+<router-outlet></router-outlet>

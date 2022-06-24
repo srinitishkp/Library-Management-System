@@ -1,0 +1,54 @@
+
+
+
+  <div class="addBook-form">
+      <form [formGroup]="addBookForm" (ngSubmit)="onSubmit()" >
+        <h1>Add Book</h1>
+        <div class="content">
+          <div class="input-field">
+            <input type="text" placeholder="Book Name" class="form-control" formControlName="BookName" >
+          </div>
+          <div *ngIf="addBookForm.controls.BookName.invalid && (addBookForm.controls.BookName.dirty || addBookForm.controls.BookName.touched)" class="alert alert-danger">
+            <div *ngIf="addBookForm.controls.BookName.errors?.['required']">
+                Book Name is required.
+            </div>
+          </div> 
+          <div class="input-field">
+            <input type="text" placeholder="Author Name" class="form-control" formControlName="AuthorName" >
+          </div>
+          <div *ngIf="addBookForm.controls.AuthorName.invalid && (addBookForm.controls.AuthorName.dirty || addBookForm.controls.AuthorName.touched)" class="alert alert-danger">
+            <div *ngIf="addBookForm.controls.AuthorName.errors?.['required']">
+                Author Name is required.
+            </div>
+          </div> 
+          <div class="input-field">
+            <input type="text-field" class="form-control"  placeholder="Genre" formControlName="Genre" >
+          </div>
+          <div *ngIf="addBookForm.controls.Genre.invalid && (addBookForm.controls.Genre.dirty || addBookForm.controls.Genre.touched)" class="alert alert-danger">
+            <div *ngIf="addBookForm.controls.Genre.errors?.['required']">
+              Genre is required.
+            </div>
+          </div> 
+          <div class="form-group">
+            
+              <label for="Availability">Availability:</label>
+                &nbsp;
+              <input id="A" type="radio" value="A" name="Availability" formControlName="Availability">
+              <label for="A">Available</label>
+            &nbsp;
+              <input id="NA" type="radio" value="NA" name="Availability" formControlName="Availability">
+              <label for="NA">Not Available</label>
+              
+            <div *ngIf="addBookForm.controls.Availability.touched && addBookForm.controls.Availability.invalid" class="alert alert-danger">
+                <div *ngIf="addBookForm.controls.Availability.errors?.['required']">Availability is required.</div>
+            </div>
+          </div>         
+        </div>
+        <div class="action">
+          <button type="submit" [disabled]="!addBookForm.valid">Add Book</button>
+        </div>
+      </form>
+    </div>
+    <script  src="./script.js"></script><!DOCTYPE html>
+  
+
