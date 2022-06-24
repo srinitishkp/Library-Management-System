@@ -11,7 +11,7 @@ Technologies:
           
 Features:
 
-	 Members/Borrowers:
+	Members/Borrowers:
 
 		   Browse various books and check their availability(catalogue).
 		   Searching books based on genre.	
