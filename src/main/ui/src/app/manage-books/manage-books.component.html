@@ -1,6 +1,6 @@
 <div><librarian-header></librarian-header></div>
 <div class="container">
-  <div id="form"><add-book (myEvent)=emit($event)></add-book></div>
+  <div id="form"><add-book (myEvent)=refresh($event)></add-book></div>
   <div id="table"><book-table [books]=bookData></book-table></div>
 </div>
 

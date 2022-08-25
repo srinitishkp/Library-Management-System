@@ -7,17 +7,15 @@ import { catchError, map, retry } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
+
 export class BookService {
 
-  
-
-  configUrl : string | undefined;
+  configUrl  = 'http://localhost:8080/LibraryManagementSystem/LMServlet/book'
   constructor(private http : HttpClient) { }
   
 
   getBooks() : Observable <book[]> {
 
-    this.configUrl = 'http://localhost:8080/LibraryManagementSystem/LMServlet/book';
     let headers = new HttpHeaders();
     headers = headers.append('ACTION', 'getBooks');
     return this.http.get<book[]>(this.configUrl, { headers: headers })
@@ -27,7 +25,6 @@ export class BookService {
 
   getGenreBooks(genre : string) : Observable <book[]> {
 
-    this.configUrl = 'http://localhost:8080/LibraryManagementSystem/LMServlet/book';
     let headers = new HttpHeaders();
     headers = headers.append('ACTION', 'getGenreBooks');
     headers= headers.set('Genre',genre)
@@ -36,19 +33,17 @@ export class BookService {
   }
 
   addBook(data : string): Observable<any> {
-    let configUrl = 'http://localhost:8080/LibraryManagementSystem/LMServlet/book';
+    
     let header = new HttpHeaders();
     header=header.append('ACTION','insertBook')
-    return this.http.post(configUrl,data,{headers : header , observe : 'response'})
+    return this.http.post(this.configUrl,data,{headers : header , observe : 'response'})
 
   }
 
   deleteBook(id:string): Observable<any> {
 
-    console.log(id)
-    let configurl='http://localhost:8080/LibraryManagementSystem/LMServlet/book'
     let data ={ "BookId" : id}
-    return this.http.delete(configurl,{ body : JSON.stringify(data) ,observe:'response'})
+    return this.http.delete(this.configUrl,{ body : JSON.stringify(data) ,observe:'response'})
  
   }
 }

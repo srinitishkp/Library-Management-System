@@ -18,8 +18,10 @@ export class ManageBooksComponent implements OnInit {
     this.updateBooks()
   }
 
-  emit($event : any){
+  refresh($event : any){
+    console.log("Here")
     this.updateBooks()
+    console.log(this.bookData)
   }
 
   updateBooks(){

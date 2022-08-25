@@ -21,7 +21,6 @@ export class LoginComponent implements OnInit {
   onSubmit(){
     
     if(this.loginForm.valid){
-      let formValue=this.loginForm.value
       let uname = this.loginForm.value.uname as string
       let passw = this.loginForm.value.passw as string
       this.acc_service.validatePass(uname,passw).subscribe((res : HttpResponse<any>) =>{
